@@ -92,7 +92,9 @@
                         </td>
                         <!-- Ghi chú -->
                         <td>
-                            <p style="font-weight: bold;"><?= $ds["ghi_chu"] ?></p>
+                            <p style="font-weight: bold;">
+                                <?= $ds["so_luong"] > 0 ? 'Còn phòng' : 'Hết phòng' ?>
+                            </p>
                             <p>Đang: <?php if ($ds["an_hien"] == 0) echo "Ẩn";
                                         else echo "Hiện" ?></p>
                             <?php if ($ds["an_hien"] == 0) {

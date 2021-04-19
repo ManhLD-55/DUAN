@@ -319,7 +319,7 @@ function Demcanhotheoquanvaloaican($loaican,$ma_quan){
 }
 // hợp đồngthuê
  function hopdong($id){
-     $sql=" SELECT * FROM hop_dong WHERE ma_tk='$id' ORDER BY ma_dat DESC ";
+     $sql=" SELECT * FROM hop_dong WHERE ma_tk='$id' ORDER BY id DESC ";
      return query($sql);
  }
  function datlich($id){

@@ -417,7 +417,6 @@ switch ($act) {
     break;
   case 'hop-dong':
       $ma_tk = $_GET["ma_tk"];
-
       $hd = hopdong($ma_tk);
       $kh = khachhang($_SESSION['id']);
       $rows = 'views/hopdong.php';
