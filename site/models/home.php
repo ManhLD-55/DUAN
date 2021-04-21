@@ -328,7 +328,11 @@ function Demcanhotheoquanvaloaican($loaican,$ma_quan){
  }
  // gia han hop dong
  function giahan($ngay_thue,$ngay_het_han,$ma_tk){
-     $sql="UPDATE hop_dong SET ngay_thue='$ngay_thue',ngay_het_han='$ngay_het_han' WHERE ma_tk='$ma_tk'";
+     if ($ngay_thue) {
+        $sql="UPDATE hop_dong SET ngay_thue='$ngay_thue',ngay_het_han='$ngay_het_han' WHERE ma_tk='$ma_tk'";
+     } else {
+        $sql="UPDATE hop_dong SET ngay_het_han='$ngay_het_han' WHERE ma_tk='$ma_tk'";
+     }
      execute($sql);
  }
 
@@ -491,8 +495,8 @@ function kichhoattk($ma_tk){
     return $kq['soluong'];
 }
 // update tk
-function  updatekh($tentk, $ma_tk, $email, $sdt){
-    $sql = "UPDATE khach_hang SET ho_ten='$tentk', email='$email', sdt='$sdt' WHERE ma_tk='$ma_tk'";
+function  updatekh($tentk, $ma_tk, $email, $sdt, $cmnd_truoc, $cmnd_sau){
+    $sql = "UPDATE khach_hang SET ho_ten='$tentk', email='$email', sdt='$sdt', cmnd_truoc='$cmnd_truoc', cmnd_sau='$cmnd_sau' WHERE ma_tk='$ma_tk'";
     execute($sql);
 }
 function Luuthongtintk($ho_ten,$user, $pass, $email, $random){
@@ -556,8 +560,14 @@ function khachhang($id){
     return queryOne($sql);
 }
 //căn hộ đả đăng
-function canhodadang($id){
-    $sql="SELECT * FROM can_ho WHERE ma_tk='$id' ORDER BY ma_can DESC";
+function canhodadang($id, $soluong = false){
+    $sql="SELECT * FROM can_ho WHERE ma_tk='$id' ";
+    if ($soluong) {
+        $sql .= "AND so_luong > 0 ";
+    }
+
+    $sql .= "ORDER BY ma_can DESC";
+
     return query($sql);
 }
 function maloaican($id)
@@ -601,8 +611,8 @@ function getphuongbyidquan($id){
     $sql="SELECT * FROM phuong WHERE ma_quan='$id'";
     return query($sql);
 }
-function themhopdong($ma_tk,$vi_tri,$dien_tich,$ten_can_ho,$gia_thue,$chi_phi_khac,$do_dung,$nguoi_thue,$chu_nha,$loai_can,$ngay_thue,$ngay_het_han){
-    $sql="INSERT into hop_dong(ma_tk,vi_tri,dien_tich,ten_can_ho,gia_thue,chi_phi_khac,do_dung,nguoi_thue,chu_nha,loai_can,ngay_thue,ngay_het_han) value ($ma_tk,$vi_tri,$dien_tich,$ten_can_ho,$gia_thue,$chi_phi_khac,$do_dung,$nguoi_thue,$chu_nha,$loai_can,$ngay_thue,$ngay_het_han)";
+function themhopdong($ma_tk,$ma_can, $vi_tri,$dien_tich,$ten_can_ho,$gia_thue,$chi_phi_khac,$do_dung,$nguoi_thue,$chu_nha,$loai_can,$ngay_thue,$ngay_het_han){
+    $sql="SET FOREIGN_KEY_CHECKS=0; INSERT into hop_dong(ma_tk,ma_can,vi_tri,dien_tich,ten_can_ho,gia_thue,chi_phi_khac,do_dung,nguoi_thue,chu_nha,loai_can,ngay_thue,ngay_het_han) value ('$ma_tk','$ma_can','$vi_tri','$dien_tich','$ten_can_ho','$gia_thue','$chi_phi_khac','$do_dung','$nguoi_thue','$chu_nha','$loai_can','$ngay_thue','$ngay_het_han')";
     execute($sql);
 }
 function themcanho($ma_tk, $ma_loai, $ma_quan,$ma_phuong, $dia_chi, $ten_can_ho, $dien_tich, $tang, $so_phong_ngu, $so_phong_vs, $gia_thue, $chi_phi, $huong_nha, $hinh, $hinha, $hinhb, $hinhc, $ghi_chu, $tien_ich, $an_hien){
@@ -614,8 +624,8 @@ function  Update_chdt($ma_tk, $ma_loai, $ma_quan, $ma_phuong, $dia_chi, $ten_can
     $sql = "UPDATE can_ho SET ma_tk='$ma_tk', ma_quan='$ma_quan', id='$ma_phuong', ma_loai='$ma_loai', dia_chi='$dia_chi', ten_can_ho='$ten_can_ho', dien_tich='$dien_tich', tang='$tang', huong_nha='$huong_nha',tien_ich='$tien_ich', chi_phi_khac='$chi_phi' , so_phong_ngu='$so_phong_ngu', so_phong_vs='$so_phong_vs', gia_thue='$gia_thue',hinh='$hinh', hinha='$hinha', hinhb='$hinhb', hinhc='$hinhc', ghi_chu='$ghi_chu' WHERE ma_can='$ma_can'";
     execute($sql);
 }
-function datlichid($ma_can, $ma_tk, $ngay_xem, $ngay_dat ,$trang_thai_lich, $ten_nguoi_dat , $sodt,$gio_xem, $ghi_chu){
-    $sql="INSERT into dat_lich(ma_can, ma_tk, ngay_xem, ngay_dat,trang_thai_lich,ten_nguoi_dat,sodt,gio_xem,ghi_chu) value ('$ma_can', '$ma_tk', '$ngay_xem','$ngay_dat','$trang_thai_lich','$ten_nguoi_dat','$sodt','$gio_xem','$ghi_chu')";
+function datlichid($ma_can, $ma_dat, $ma_tk, $ngay_xem, $ngay_dat ,$trang_thai_lich, $ten_nguoi_dat , $sodt,$gio_xem, $ghi_chu){
+    $sql="INSERT into dat_lich(ma_can, ma_dat, ma_tk, ngay_xem, ngay_dat,trang_thai_lich,ten_nguoi_dat,sodt,gio_xem,ghi_chu) value ('$ma_can', '$ma_dat', '$ma_tk', '$ngay_xem','$ngay_dat','$trang_thai_lich','$ten_nguoi_dat','$sodt','$gio_xem','$ghi_chu')";
     execute($sql);
 }
 
@@ -657,5 +667,44 @@ function updatematkhau($email, $pass){
     execute($sql);
 }
 
+function getDatlichByMaDat($id)
+{
+    $sql=" SELECT * FROM dat_lich WHERE ma_dat='$id' ORDER BY id DESC ";
+    return queryOne($sql);
+}
 
+function updateSoluongCanHo($ma_can, $so_luong)
+{
+    $sql = "UPDATE can_ho SET so_luong='$so_luong' WHERE ma_can='$ma_can'";
+    execute($sql);
+}
+
+function xoaHopDong($id)
+{
+    $sql="DELETE FROM hop_dong where id='$id'";
+    execute($sql);
+}
+
+function getAllKhachHang($id){
+    $sql="SELECT * FROM khach_hang";
+    return query($sql);
+}
+
+function getHopDongById($id)
+{
+    $sql="SELECT * FROM hop_dong where id='$id'";
+    return queryOne($sql);
+}
+function updateHopDong($ma_tk,$ma_can, $vi_tri,$dien_tich,$ten_can_ho,$gia_thue,$chi_phi_khac,$do_dung,$nguoi_thue,$chu_nha,$loai_can,$ngay_thue,$ngay_het_han)
+{
+    $sql = "UPDATE hop_dong SET 
+    ma_tk = '$ma_tk', ma_can = '$ma_can',vi_tri = '$vi_tri',dien_tich = '$dien_tich',ten_can_ho = '$ten_can_ho',
+    gia_thue = '$gia_thue',chi_phi_khac = '$chi_phi_khac',do_dung = '$do_dung',nguoi_thue = '$nguoi_thue',chu_nha = '$chu_nha',
+    loai_can = '$loai_can',ngay_thue = '$ngay_thue',ngay_het_han = '$ngay_het_han'";
+    execute($sql);
+}
+function getMaxId($table_name) {
+    $sql = "SELECT MAX(id) as id FROM $table_name";
+    return queryOne($sql);
+}
 ?> 

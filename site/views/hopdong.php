@@ -55,8 +55,8 @@
                     </td>
 
 
-                    <td><a href="?act=edit_ch&ma_can=<?=$c['ma_can']?>"><i class="fas fa-edit"></i></a></td>
-                    <td><a class="btn_delete_ch" href="?act=delete_ch&ma_can=<?= $c['ma_can'] ?>"><i class="fas fa-trash-alt"></i></a></td>
+                    <td><a href="?act=edithopdong&id=<?=$c['id']?>"><i class="fas fa-edit"></i></a></td>
+                    <td><a class="btn_delete_ch" href="?act=delete_hop_dong&id=<?= $c['id'] ?>&ma_can=<?= $c['ma_can'] ?>"><i class="fas fa-trash-alt"></i></a></td>
                 </tr>
             <?php } ?>
 
@@ -124,7 +124,7 @@
                         <p><?= $c["chi_phi_khac"] ?></p>
                     </td>
 
-                    <td><a class="btn_delete_ch" href="?act=delete_ch&ma_can=<?= $c['ma_can'] ?>"><i class="fas fa-trash-alt"></i></a></td>
+                    <td><a class="btn_delete_ch" href="?act=delete_hop_dong&id=<?= $c['id'] ?>&ma_can=<?= $c['ma_can'] ?>"><i class="fas fa-trash-alt"></i></a></td>
                 </tr>
             <?php } ?>
 

@@ -11,7 +11,7 @@
  Target Server Version : 100414
  File Encoding         : 65001
 
- Date: 19/04/2021 23:34:07
+ Date: 22/04/2021 03:22:32
 */
 
 SET NAMES utf8mb4;
@@ -60,9 +60,9 @@ CREATE TABLE `can_ho`  (
 -- ----------------------------
 -- Records of can_ho
 -- ----------------------------
-INSERT INTO `can_ho` VALUES (13, 4, 48, 1, 12, '312 Nguyễn Trãi, P.Trung Văn, Q.Nam Từ Liêm, Hà Nội ', 'Chung cư mini 111111111111111111', 50, 23, 1, '<p>gần c&aacute;c trường học từ mẫu gi&aacute;o cho đến đại học danh tiếng : Trường mầm non Sao Mai , Trường cấp 1 Đặng Trần C&ocirc;n , Trường cấp 2 Nguyễn Hữu Thọ , Trường cấp 3 Nguyễn Tr&atilde;i , Trường đại học Luật TP. Hồ Ch&iacute; Minh, bệnh viện Quận 4,...</p>\r\n', '', 2, 1, 18500000, 'nha1-1.jpg', 'nha1-2.jpg', 'nha1-3.jpg', 'nha1-4.jpg', 1, 'Còn phòng', '1', 1);
+INSERT INTO `can_ho` VALUES (13, 4, 48, 1, 12, '312 Nguyễn Trãi, P.Trung Văn, Q.Nam Từ Liêm, Hà Nội ', 'Chung cư mini 111111111111111111', 50, 23, 1, '<p>gần c&aacute;c trường học từ mẫu gi&aacute;o cho đến đại học danh tiếng : Trường mầm non Sao Mai , Trường cấp 1 Đặng Trần C&ocirc;n , Trường cấp 2 Nguyễn Hữu Thọ , Trường cấp 3 Nguyễn Tr&atilde;i , Trường đại học Luật TP. Hồ Ch&iacute; Minh, bệnh viện Quận 4,...</p>\r\n', '', 2, 1, 18500000, 'nha1-1.jpg', 'nha1-2.jpg', 'nha1-3.jpg', 'nha1-4.jpg', 1, 'Còn phòng', '1', 0);
 INSERT INTO `can_ho` VALUES (14, 4, 48, 2, 12, '111 Trần Đăng Ninh, Cầu Giấy, Hà Nội', 'Chung cư mini', 40, 0, 2, '<p>Trường THPT Nguyễn Hữu Thọ c&aacute;ch, Vinmart Store c&aacute;ch, UBND Quận 4 c&aacute;ch, Trường Đại học Luật TPHCM, Trường tiểu học Nguyễn Văn Trỗi, Bệnh viện quận 4, Trường tiểu học L&yacute; Nhơn, C&ocirc;ng vi&ecirc;n S&agrave;i G&ograve;n....</p>\r\n', '', 1, 1, 12000000, 'nha2-1.jpg', 'nha2-2.jpg', 'nha2-3.jpg', 'nha2-4.jpg', 1, 'Còn phòng', '0', 1);
-INSERT INTO `can_ho` VALUES (15, 4, 48, 1, 12, ' 118 Thái hà, Đống Đa, Hà Nội', 'Chung cư mini', 35, 0, 1, '<p>Trường THPT Nguyễn Hữu Thọ c&aacute;ch, Vinmart Store c&aacute;ch, UBND Quận 4 c&aacute;ch, Trường Đại học Luật TPHCM, Trường tiểu học Nguyễn Văn Trỗi, Bệnh viện quận 4, Trường tiểu học L&yacute; Nhơn, C&ocirc;ng vi&ecirc;n S&agrave;i G&ograve;n....</p>\r\n', '', 1, 1, 13000000, 'nha3-1.jpg', 'nha3-2.jpg', 'nha3-3.jpg', 'nha3-4.jpg', 1, 'Còn phòng', '1', 1);
+INSERT INTO `can_ho` VALUES (15, 4, 48, 1, 12, ' 118 Thái hà, Đống Đa, Hà Nội', 'Chung cư mini', 35, 0, 1, '<p>Trường THPT Nguyễn Hữu Thọ c&aacute;ch, Vinmart Store c&aacute;ch, UBND Quận 4 c&aacute;ch, Trường Đại học Luật TPHCM, Trường tiểu học Nguyễn Văn Trỗi, Bệnh viện quận 4, Trường tiểu học L&yacute; Nhơn, C&ocirc;ng vi&ecirc;n S&agrave;i G&ograve;n....</p>\r\n', '', 1, 1, 13000000, 'nha3-1.jpg', 'nha3-2.jpg', 'nha3-3.jpg', 'nha3-4.jpg', 1, 'Còn phòng', '1', 0);
 INSERT INTO `can_ho` VALUES (20, 4, 48, 2, 22, '60-62 Đại Cồ Việt, P. Lê Đại Hành, Q. Hai Bà Trưng, TP. Hà Nội', 'Chung cư mini', 115, 0, 7, '<p>-&nbsp;<strong>Được trang bị nội thất gồm:&nbsp;m&aacute;y lạnh, sofa, giường tủ,&nbsp;thiết bị ph&ograve;ng tắm, ph&ograve;ng vệ sinh,...</strong></p>\r\n\r\n<p>-&nbsp;<strong>Tiện &iacute;ch nội khu cao cấp</strong>: hồ bơi tr&agrave;n được bố tr&iacute; tại tầng 3, khu nh&agrave; h&agrave;ng 5 sao phong c&aacute;ch Địa Trung Hải dưới sảnh tầng trệt , khu thương mại , ph&ograve;ng tập GYM hiện đại, vườn thượng uyển s&acirc;n thượng, nh&agrave; h&agrave;ng, caf&eacute;, khu vui chơi trẻ em v&agrave; vườn treo Babylon tại tầng thượng.</p>\r\n\r\n<p>-&nbsp;<strong>Tiện &iacute;ch ngoại khu</strong>:&nbsp;gần c&aacute;c trường học từ mẫu gi&aacute;o cho đến đại học danh tiếng : Trường mầm non Sao Mai , Trường cấp 1 Đặng Trần C&ocirc;n , Trường cấp 2 Nguyễn Hữu Thọ , Trường cấp 3 Nguyễn Tr&atilde;', '', 3, 2, 14000000, 'nha8-1.jpg', 'nha8-2.jpg', 'nha8-3.jpg', 'nha8-4.jpg', 1, 'Còn phòng', '1', 1);
 INSERT INTO `can_ho` VALUES (21, 4, 48, 1, 21, '18 ngõ 2, Đường Nguyễn Chánh, Phường Trung Hoà, Quận Cầu Giấy, Hà Nội', 'Nhà trọ', 40, 0, 7, '<p><strong>- Tiện &iacute;ch nội khu cao cấp</strong>: hồ bơi tr&agrave;n được bố tr&iacute; tại tầng 3, khu nh&agrave; h&agrave;ng 5 sao phong c&aacute;ch Địa Trung Hải dưới sảnh tầng trệt, khu thương mại, ph&ograve;ng tập GYM hiện đại...</p>\r\n\r\n<p><strong>- Tiện &iacute;ch ngoại khu:</strong>&nbsp;Trường THPT Nguyễn Hữu Thọ c&aacute;ch, Vinmart Store c&aacute;ch, UBND Quận 4 c&aacute;ch, Trường Đại học Luật TPHCM, Trường tiểu học Nguyễn Văn Trỗi, Bệnh viện quận 4, Trường tiểu học L&yacute; Nhơn, C&ocirc;ng vi&ecirc;n S&agrave;i G&ograve;n....</p>\r\n', '', 1, 1, 3000000, 'nhatro10.jpg', 'nha9-2.jpg', 'nha9-3.jpg', 'nha9-4.jpg', 1, 'Hết phòng', '0', 1);
 INSERT INTO `can_ho` VALUES (22, 4, 48, 1, 21, 'Ngõ 20 đường bưởi SN 19a/33 1t, Đường Bưởi, Phường Quan Hoa, Quận Cầu Giấy, Hà Nội', 'Chung cư mini', 34, 0, 8, '<p><strong>- Tiện &iacute;ch nội khu cao cấp</strong>: hồ bơi tr&agrave;n được bố tr&iacute; tại tầng 3, khu nh&agrave; h&agrave;ng 5 sao phong c&aacute;ch Địa Trung Hải dưới sảnh tầng trệt, khu thương mại, ph&ograve;ng tập GYM hiện đại...</p>\r\n\r\n<p><strong>- Tiện &iacute;ch ngoại khu:</strong>&nbsp;Trường THPT Nguyễn Hữu Thọ c&aacute;ch, Vinmart Store c&aacute;ch, UBND Quận 4 c&aacute;ch, Trường Đại học Luật TPHCM, Trường tiểu học Nguyễn Văn Trỗi, Bệnh viện quận 4, Trường tiểu học L&yacute; Nhơn, C&ocirc;ng vi&ecirc;n S&agrave;i G&ograve;n....</p>\r\n', '', 1, 1, 10000000, 'nha10-1.jpg', 'nha10-2.jpg', 'nha10-3.jpg', 'nha10-4.jpg', 0, 'Còn phòng', '1', 1);
@@ -87,11 +87,11 @@ INSERT INTO `can_ho` VALUES (58, 6, 80, 2, 12, 'Số 118 Thái Hà, Đống Đa,
 INSERT INTO `can_ho` VALUES (59, 8, 109, 2, 12, 'Số 111 Trần Đăng Ninh, Cầu Giấy, Hà Nội', 'Nhà trọ', 74, 0, 4, '<p>Tiện &iacute;ch nội khu :Tầng 1: Khu sảnh đ&oacute;n kh&aacute;ch, nh&agrave; sinh hoạt cộng đồng ( 870m2), nh&agrave; trẻ ( tr&ecirc;n 3300m2), TTTM, &nbsp;Tầng 2 v&agrave; 2 tầng hầm: Diện t&iacute;ch 11.208m2 d&ugrave;ng để xe đủ chỗ cho tất cả 1092 căn hộ.&nbsp;Tầng 3: L&agrave; khu phức hợp hồ bơi ngo&agrave;i trời 300m2, khu s&acirc;n vườn, thương mại bu&ocirc;n b&aacute;n. Ngo&agrave;i ra City Gate Towers 2 được bao quanh bởi đường nội bộ, hồ cảnh quan, s&acirc;n tennis.</p>\r\n', '', 2, 2, 2000000, 'nhatro1.jpg', 'canhodep3.jpg', 'canhodep12.jpg', 'tải xuống.jpg', 1, 'Hết phòng', '0', 1);
 INSERT INTO `can_ho` VALUES (60, 7, 84, 1, 12, 'Đường Nghĩa Tân, Phường Nghĩa Tân, Quận Cầu Giấy, Hà Nội', 'Chung cư mini', 78, 0, 7, '<p>-&nbsp;<strong>Căn hộ đầy đủ tiện nghi:&nbsp;</strong>C&oacute; hồ bơi, ph&ograve;ng gym, khu vui chơi trẻ em, nh&agrave; h&agrave;ng, cửa h&agrave;ng tiện lợi, qu&aacute;n coffee, lối đi bộ rộng r&atilde;i.</p>\r\n\r\n<p>&nbsp;- Tiện &iacute;ch ngoại khu:&nbsp;<strong>Xung quanh trường học&nbsp;quốc tế: Nam S&agrave;i G&ograve;n (SSIS), v&agrave; trường quốc tế Đinh Thiện L&yacute;, Trường quốc tế Canada,&nbsp;dễ d&agrave;ng di chuyển đến c&aacute;c trung t&acirc;m thương mại như:&nbsp;SC Vivo City, Crescent Mall, Parkson; C&ocirc;n</strong></p>\r\n', '', 2, 2, 13000000, 'nha46-1.jpg', 'nha46-2.jpg', 'nha46-3.jpg', 'nha46-4.jpg', 1, 'Còn phòng', '1', 1);
 INSERT INTO `can_ho` VALUES (61, 7, 84, 1, 12, '34D ngõ 218, Đường Lạc Long Quân, Phường Thụy Khuê, Quận Tây Hồ, Hà Nội', 'Chung cư mini', 80, 0, 6, '<p>-&nbsp;<strong>Căn hộ đầy đủ tiện nghi:&nbsp;</strong>C&oacute; hồ bơi, ph&ograve;ng gym, khu vui chơi trẻ em, nh&agrave; h&agrave;ng, cửa h&agrave;ng tiện lợi, qu&aacute;n coffee, lối đi bộ rộng r&atilde;i.</p>\r\n\r\n<p>&nbsp;- Tiện &iacute;ch ngoại khu:&nbsp;<strong>Xung quanh trường học&nbsp;quốc tế: Nam S&agrave;i G&ograve;n (SSIS), v&agrave; trường quốc tế Đinh Thiện L&yacute;, Trường quốc tế Canada,&nbsp;dễ d&agrave;ng di chuyển đến c&aacute;c trung t&acirc;m thương mại như:&nbsp;SC Vivo City, Crescent Mall, Parkson; C&ocirc;ng vi&ecirc;n, Co.op Food, Citimart greenview&nbsp;,... v&agrave; c&aacute;c tiện &iacute;ch xung quanh.</strong></p>\r\n', '', 2, 2, 12500000, 'nha47-1.jpg', 'nha47-2.jpg', 'nha47-3.jpg', 'nha47-4.jpg', 1, 'Còn phòng', '0', 1);
-INSERT INTO `can_ho` VALUES (62, 7, 84, 1, 12, '453 Nguyễn Trãi, Thanh Xuân, Hà Nội', 'Chung cư mini', 60, 0, 5, '<p>&nbsp;- Tiện &iacute;ch ngoại khu:&nbsp;<strong>Xung quanh trường học&nbsp;quốc tế: Nam S&agrave;i G&ograve;n (SSIS), v&agrave; trường quốc tế Đinh Thiện L&yacute;, Trường quốc tế Canada,&nbsp;dễ d&agrave;ng di chuyển đến c&aacute;c trung t&acirc;m thương mại như:&nbsp;SC Vivo City, Crescent Mall, Parkson; C&ocirc;ng vi&ecirc;n, Co.op Food, Citimart greenview&nbsp;,... v&agrave; c&aacute;c tiện &iacute;ch xung quanh.</strong></p>\r\n', '', 2, 2, 9500000, 'nha48-1.jpg', 'nha48-2.jpg', 'nha48-3.jpg', 'nha48-4.jpg', 1, 'Còn phòng', '1', 1);
-INSERT INTO `can_ho` VALUES (63, 7, 84, 2, 12, 'số 27c ngách 63 ngõ 96, Đường Đại Từ, Phường Đại Kim, Quận Hoàng Mai, Hà Nội', 'Nhà trọ', 78, 0, 2, '<p>- Tiện &iacute;ch ngoại khu:&nbsp;<strong>Xung quanh c&oacute; trường học THPT, cấp 1, cấp 2, si&ecirc;u thị VinMart,&nbsp;coffee, UBND phường, Ng&acirc;n h&agrave;ng, Bệnh viện quốc tế, trung t&acirc;m thương mại Creasent Mall,&nbsp;FV... v&agrave; c&aacute;c tiện &iacute;ch xung quanh.</strong></p>\r\n\r\n<p><strong>-&nbsp; Thiết kế hiện đại, đơn giản, tận dụng mọi kh&ocirc;ng gian, đầy đủ nội thất cao cấp, c&oacute; &ocirc; đậu xe hơi ri&ecirc;ng. Gi&oacute; tự nhi&ecirc;n cả ng&agrave;y.</strong></p>\r\n\r\n<p>-&nbsp;Khu d&acirc;n cư văn minh, tho&aacute;ng m&aacute;t, sạch sẽ.</p>\r\n', '', 2, 2, 2000000, 'nhatro49.jpg', 'nha49-2.jpg', 'nha49-3.jpg', 'nha49-4.jpg', 1, 'Còn phòng', '1', 1);
-INSERT INTO `can_ho` VALUES (64, 6, 81, 2, 12, '42 Ngõ 91, Đường Phan Trọng Tuệ, Phường Kiến Hưng, Quận Hà Đông, Hà Nội', 'Chung cư mini', 84, 0, 0, '<p>- <strong>Căn hộ đầy đủ tiện nghi: </strong>Có hồ bơi, phòng gym, khu vui chơi trẻ em, nhà hàng, cửa hàng tiện lợi, quán coffee, lối đi bộ rộng rãi.</p>\r\n\r\n<p> - Tiện ích ngoại khu: <strong>Xung quanh trường học quốc tế: Nam Sài Gòn (SSIS), và trường quốc tế Đinh Thiện Lý, Trường quốc tế Canada, dễ dàng di chuyển đến các trung tâm thương mại như: SC Vivo City, Crescent Mall, Parkson; Công viên, Co.op Food, Citimart greenview ,... và các tiện ích xung quanh.</strong></p>\r\n', 'không', 2, 2, 8000000, 'nha50-1.jpg', 'nha50-2.jpg', 'nha50-3.jpg', 'nha50-3.jpg', 1, 'Hết phòng', '1', 1);
+INSERT INTO `can_ho` VALUES (62, 7, 84, 1, 12, '453 Nguyễn Trãi, Thanh Xuân, Hà Nội', 'Chung cư mini', 60, 0, 5, '<p>&nbsp;- Tiện &iacute;ch ngoại khu:&nbsp;<strong>Xung quanh trường học&nbsp;quốc tế: Nam S&agrave;i G&ograve;n (SSIS), v&agrave; trường quốc tế Đinh Thiện L&yacute;, Trường quốc tế Canada,&nbsp;dễ d&agrave;ng di chuyển đến c&aacute;c trung t&acirc;m thương mại như:&nbsp;SC Vivo City, Crescent Mall, Parkson; C&ocirc;ng vi&ecirc;n, Co.op Food, Citimart greenview&nbsp;,... v&agrave; c&aacute;c tiện &iacute;ch xung quanh.</strong></p>\r\n', '', 2, 2, 9500000, 'nha48-1.jpg', 'nha48-2.jpg', 'nha48-3.jpg', 'nha48-4.jpg', 1, 'Còn phòng', '1', 2);
+INSERT INTO `can_ho` VALUES (63, 7, 84, 2, 12, 'số 27c ngách 63 ngõ 96, Đường Đại Từ, Phường Đại Kim, Quận Hoàng Mai, Hà Nội', 'Nhà trọ', 78, 0, 2, '<p>- Tiện &iacute;ch ngoại khu:&nbsp;<strong>Xung quanh c&oacute; trường học THPT, cấp 1, cấp 2, si&ecirc;u thị VinMart,&nbsp;coffee, UBND phường, Ng&acirc;n h&agrave;ng, Bệnh viện quốc tế, trung t&acirc;m thương mại Creasent Mall,&nbsp;FV... v&agrave; c&aacute;c tiện &iacute;ch xung quanh.</strong></p>\r\n\r\n<p><strong>-&nbsp; Thiết kế hiện đại, đơn giản, tận dụng mọi kh&ocirc;ng gian, đầy đủ nội thất cao cấp, c&oacute; &ocirc; đậu xe hơi ri&ecirc;ng. Gi&oacute; tự nhi&ecirc;n cả ng&agrave;y.</strong></p>\r\n\r\n<p>-&nbsp;Khu d&acirc;n cư văn minh, tho&aacute;ng m&aacute;t, sạch sẽ.</p>\r\n', '', 2, 2, 2000000, 'nhatro49.jpg', 'nha49-2.jpg', 'nha49-3.jpg', 'nha49-4.jpg', 1, 'Còn phòng', '1', 3);
+INSERT INTO `can_ho` VALUES (64, 6, 81, 2, 12, '42 Ngõ 91, Đường Phan Trọng Tuệ, Phường Kiến Hưng, Quận Hà Đông, Hà Nội', 'Chung cư mini', 84, 0, 0, '<p>- <strong>Căn hộ đầy đủ tiện nghi: </strong>Có hồ bơi, phòng gym, khu vui chơi trẻ em, nhà hàng, cửa hàng tiện lợi, quán coffee, lối đi bộ rộng rãi.</p>\r\n\r\n<p> - Tiện ích ngoại khu: <strong>Xung quanh trường học quốc tế: Nam Sài Gòn (SSIS), và trường quốc tế Đinh Thiện Lý, Trường quốc tế Canada, dễ dàng di chuyển đến các trung tâm thương mại như: SC Vivo City, Crescent Mall, Parkson; Công viên, Co.op Food, Citimart greenview ,... và các tiện ích xung quanh.</strong></p>\r\n', 'không', 2, 2, 8000000, 'nha50-1.jpg', 'nha50-2.jpg', 'nha50-3.jpg', 'nha50-3.jpg', 1, 'Hết phòng', '1', 5);
 INSERT INTO `can_ho` VALUES (65, 2, 15, 2, 42, ' Số 113 Thái Hà, Đống Đa, Hà Nội', 'Chung cư mini', 54, 3, 3, 'không có', 'không có', 4, 2, 7500000, '5445e08a1773b9f81e3777ae2eb47648.jpg', '5be956536389d90c40930238c01862f5.jpg', '4d461650adfdf44d9e3d52d2bf967479.jpg', '3b38fcb0fe245310e9cdb63f1cf19e98.jpg', 1, 'Hết phòng', '1', 1);
-INSERT INTO `can_ho` VALUES (67, 2, 13, 1, 12, 'Số 73 Quang Trung, Hà Đông, Hà Nội', 'Chung cư mini 123456', 45, 3, 3, 'không có', 'bài đăng', 2, 3, 234568000, '141004215_406555707219852_4881450761188021022_n.jpg', '141004215_406555707219852_4881450761188021022_n.jpg', '141004215_406555707219852_4881450761188021022_n.jpg', '141004215_406555707219852_4881450761188021022_n.jpg', 1, 'Còn phòng', '1', 1);
+INSERT INTO `can_ho` VALUES (67, 2, 13, 1, 12, 'Số 73 Quang Trung, Hà Đông, Hà Nội', 'Chung cư mini 123456', 45, 3, 3, 'không có', 'bài đăng', 2, 3, 234568000, '141004215_406555707219852_4881450761188021022_n.jpg', '141004215_406555707219852_4881450761188021022_n.jpg', '141004215_406555707219852_4881450761188021022_n.jpg', '141004215_406555707219852_4881450761188021022_n.jpg', 1, 'Còn phòng', '1', 0);
 
 -- ----------------------------
 -- Table structure for dangkytimnha
@@ -137,24 +137,17 @@ CREATE TABLE `dat_lich`  (
   INDEX `ma_dat`(`ma_dat`) USING BTREE,
   CONSTRAINT `Fk_datlich_canho` FOREIGN KEY (`ma_can`) REFERENCES `can_ho` (`ma_can`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `Fk_datlich_tk` FOREIGN KEY (`ma_tk`) REFERENCES `khach_hang` (`ma_tk`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 65 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 68 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of dat_lich
 -- ----------------------------
-INSERT INTO `dat_lich` VALUES (50, 46, 15, 45, 0, 'Lê huy', 0, 'Tôi muốn xem căn hộ này', '0356985643', '09:30:18', '2021-04-14', '2021-04-22');
-INSERT INTO `dat_lich` VALUES (53, 49, 63, 45, 1, 'Lê huy', 1, 'Tôi muốn xem căn hộ này', '0356985643', '23:41:00', '2021-04-18', '2021-04-23');
-INSERT INTO `dat_lich` VALUES (54, 0, 58, 12, 1, 'Trương Văn Hào ', 1, 'ádadas', '0987147942', '21:14:00', '2021-04-18', '2021-04-30');
-INSERT INTO `dat_lich` VALUES (55, 0, 63, 12, 1, 'Trương Văn Hào ', 1, 'ádadas', '0987147942', '19:18:00', '2021-04-18', '2021-04-28');
-INSERT INTO `dat_lich` VALUES (56, 0, 62, 12, 1, 'Trương Văn Hào ', 1, 'qửqwasedf', '0987147942', '19:24:00', '2021-04-18', '2021-05-06');
-INSERT INTO `dat_lich` VALUES (57, 0, 15, 12, 1, 'Trương Văn Hào ', 1, 'ádas', '0987147942', '00:00:00', '2021-04-18', '2021-04-21');
-INSERT INTO `dat_lich` VALUES (58, 0, 62, 12, 1, 'Trương Văn Hào ', 1, 'ádadas', '0987147942', '23:32:00', '2021-04-18', '2021-04-24');
-INSERT INTO `dat_lich` VALUES (59, 0, 63, 12, 1, 'Trương Văn Hào ', 1, 'ádasdass', '0987147942', '04:14:00', '2021-04-18', '2021-04-22');
-INSERT INTO `dat_lich` VALUES (60, 0, 15, 12, 1, 'Trương Văn Hào ', 1, 'qửqwasedf', '0987147942', '00:00:00', '2021-04-18', '2021-04-23');
-INSERT INTO `dat_lich` VALUES (61, 0, 58, 12, 1, 'Trương Văn Hào ', 1, 'ádasa', '0987147942', '13:32:00', '2021-04-18', '2021-04-30');
-INSERT INTO `dat_lich` VALUES (62, 0, 15, 12, 1, 'Trương Văn Hào ', 1, 'núi', '0987147942', '22:20:00', '2021-04-19', '2021-04-22');
-INSERT INTO `dat_lich` VALUES (63, 0, 62, 12, 1, 'Trương Văn Hào ', 1, '', '0987147942', '23:35:00', '2021-04-19', '2021-04-20');
-INSERT INTO `dat_lich` VALUES (64, 64, 67, 12, 1, 'Lê Đức Mạnh', 1, 'Test', '0987147942', '11:40:00', '2021-04-19', '2021-04-20');
+INSERT INTO `dat_lich` VALUES (50, 46, 15, 45, 1, 'Lê huy', 2, 'Tôi muốn xem căn hộ này', '0356985643', '09:30:18', '2021-04-22', '2021-04-22');
+INSERT INTO `dat_lich` VALUES (53, 49, 63, 45, 1, 'Lê huy', 1, 'Tôi muốn xem căn hộ này', '0356985643', '23:41:00', '2021-04-22', '2021-04-23');
+INSERT INTO `dat_lich` VALUES (54, 1, 63, 12, 1, 'Lê huy', 1, 'Tôi muốn xem căn hộ này', '0356985643', '00:16:00', '2021-04-22', '2021-04-23');
+INSERT INTO `dat_lich` VALUES (65, 0, 67, 12, 1, 'Trương Văn Hào ', 1, '', '0987147942', '16:08:00', '2021-04-21', '2021-04-23');
+INSERT INTO `dat_lich` VALUES (66, 0, 67, 12, 1, 'Trương Văn Hào ', 1, '', '0987147942', '16:12:00', '2021-04-21', '2021-04-23');
+INSERT INTO `dat_lich` VALUES (67, 67, 67, 12, 1, 'Trương Văn Hào ', 1, '', '0987147942', '04:18:00', '2021-04-21', '2021-04-23');
 
 -- ----------------------------
 -- Table structure for hop_dong
@@ -192,12 +185,12 @@ CREATE TABLE `hop_dong`  (
   CONSTRAINT `FK_hop_dong_khach_hang` FOREIGN KEY (`ma_tk`) REFERENCES `khach_hang` (`ma_tk`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_hop_dong_khach_hang_2` FOREIGN KEY (`nguoi_thue`) REFERENCES `khach_hang` (`ho_ten`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_hop_dong_loai_can` FOREIGN KEY (`loai_can`) REFERENCES `loai_can` (`ten_can`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 34 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hop_dong
 -- ----------------------------
-INSERT INTO `hop_dong` VALUES (1, 12, 67, 'Chung cư mini 123456', 'Tv , tủ lạnh , điều hòa', ' Số 113 Thái Hà, Đống Đa, Hà Nội', 'Hảo', 'Lê Huy', 6500000, 81, 'Chung cư mini', 'không', '2021-04-20', '2021-05-30');
+INSERT INTO `hop_dong` VALUES (33, 12, 67, 'Chung cư mini 123456', '', 'Số 73 Quang Trung, Hà Đông, Hà Nội', 'Trương Văn Hào ', 'Trương Văn Hào ', 234568000, 45, 'Chung cư mini', '', '2021-04-21', '2021-05-21');
 
 -- ----------------------------
 -- Table structure for khach_hang
@@ -215,6 +208,8 @@ CREATE TABLE `khach_hang`  (
   `vai_tro` tinyint(1) NOT NULL DEFAULT 0 COMMENT 'vai trò',
   `random_key` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT 'dãy số ngẫu nhiên',
   `currency` int(11) NULL DEFAULT NULL,
+  `cmnd_truoc` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `cmnd_sau` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`ma_tk`) USING BTREE,
   INDEX `ho_ten`(`ho_ten`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 51 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
@@ -222,17 +217,17 @@ CREATE TABLE `khach_hang`  (
 -- ----------------------------
 -- Records of khach_hang
 -- ----------------------------
-INSERT INTO `khach_hang` VALUES (12, 'Trương Văn Hào ', 'anh.jpg', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '0987147942', 1, 'haopt1@gmail.com', 1, 'fff46f4128a55e1f7bb1', 50000);
-INSERT INTO `khach_hang` VALUES (22, 'Nguyễn Tuấn Anh', '', 'tuananh123', 'e10adc3949ba59abbe56e057f20f883e', '0987654321', 1, 'tuananh@gmail.com', 0, 'fff46f4128a55e1f7bb1', 15000);
-INSERT INTO `khach_hang` VALUES (35, 'Nguyễn Văn Dũng', '', 'nuinguyen', 'e10adc3949ba59abbe56e057f20f883e', '0382535536', 1, 'dungfpoly@gmail.com', 0, '76bc01a7bf6d4d9e8fad', 100000);
-INSERT INTO `khach_hang` VALUES (40, 'Huy 12345678', NULL, 'huy12345678', 'f3ec3b0495f654f50d4071c989d93c54', '0356478155', 1, 'huyldph08692@fpt.edu.vn', 0, '76bc01a7bf6d4d9e8fad', 35000);
-INSERT INTO `khach_hang` VALUES (42, 'Lê Huy', '', 'huylee', 'e10adc3949ba59abbe56e057f20f883e', '095551710', 1, 'huykarin11@gmail.com', 2, '76bc01a7bf6d4d9e8fad', 250000);
-INSERT INTO `khach_hang` VALUES (44, 'Lê huy', NULL, 'lehuy12589', '7f04546942b67e7b778810b3be2c454d', '0256478954', 1, 'lehuy12589@gmail.com', 0, '76bc01a7bf6d4d9e8fad', 60000);
-INSERT INTO `khach_hang` VALUES (45, 'Lê huy', NULL, 'huyle112', 'e10adc3949ba59abbe56e057f20f883e', '0356985643', 1, 'huy@gmail.com', 0, '76bc01a7bf6d4d9e8fad', 750000);
-INSERT INTO `khach_hang` VALUES (47, 'Lê Đức Huy', '', 'huykkk', '17218c9fb835c1408df23dd0289f3b87', '0382535536', 1, 'luutrunghieu89@gmail.com', 0, 'fff46f4128a55e1f7bb1', NULL);
-INSERT INTO `khach_hang` VALUES (48, 'Lê huy', '', 'admin8', 'e10adc3949ba59abbe56e057f20f883e', '0382535536', 1, 'admin@gmail.com', 2, '76bc01a7bf6d4d9e8fad', NULL);
-INSERT INTO `khach_hang` VALUES (49, 'Công Dương', NULL, 'duongcong1', 'e10adc3949ba59abbe56e057f20f883e', '0365987146', 0, 'fuckduong@gmail.com', 2, '76bc01a7bf6d4d9e8fad', NULL);
-INSERT INTO `khach_hang` VALUES (50, 'Đõ Thị Tuyết Mai', NULL, 'Mai', '25f9e794323b453885f5181f1b624d0b', '0325689451', 0, 'mai@gmail.com', 2, '76bc01a7bf6d4d9e8fad', NULL);
+INSERT INTO `khach_hang` VALUES (12, 'Trương Văn Hào ', 'anh.jpg', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '0987147942', 1, 'haopt1@gmail.com', 1, 'fff46f4128a55e1f7bb1', 50000, NULL, NULL);
+INSERT INTO `khach_hang` VALUES (22, 'Nguyễn Tuấn Anh', '', 'tuananh123', 'e10adc3949ba59abbe56e057f20f883e', '0987654321', 1, 'tuananh@gmail.com', 0, 'fff46f4128a55e1f7bb1', 15000, NULL, NULL);
+INSERT INTO `khach_hang` VALUES (35, 'Nguyễn Văn Dũng', '', 'nuinguyen', 'e10adc3949ba59abbe56e057f20f883e', '0382535536', 1, 'dungfpoly@gmail.com', 0, '76bc01a7bf6d4d9e8fad', 100000, NULL, NULL);
+INSERT INTO `khach_hang` VALUES (40, 'Huy 12345678', NULL, 'huy12345678', 'f3ec3b0495f654f50d4071c989d93c54', '0356478155', 1, 'huyldph08692@fpt.edu.vn', 0, '76bc01a7bf6d4d9e8fad', 35000, NULL, NULL);
+INSERT INTO `khach_hang` VALUES (42, 'Lê Huy', '', 'huylee', 'e10adc3949ba59abbe56e057f20f883e', '095551710', 1, 'huykarin11@gmail.com', 2, '76bc01a7bf6d4d9e8fad', 250000, NULL, NULL);
+INSERT INTO `khach_hang` VALUES (44, 'Lê huy', NULL, 'lehuy12589', '7f04546942b67e7b778810b3be2c454d', '0256478954', 1, 'lehuy12589@gmail.com', 0, '76bc01a7bf6d4d9e8fad', 60000, NULL, NULL);
+INSERT INTO `khach_hang` VALUES (45, 'Lê huy', NULL, 'huyle112', 'e10adc3949ba59abbe56e057f20f883e', '0356985643', 1, 'huy@gmail.com', 0, '76bc01a7bf6d4d9e8fad', 750000, NULL, NULL);
+INSERT INTO `khach_hang` VALUES (47, 'Lê Đức Huy', '', 'huykkk', '17218c9fb835c1408df23dd0289f3b87', '0382535536', 1, 'luutrunghieu89@gmail.com', 0, 'fff46f4128a55e1f7bb1', NULL, NULL, NULL);
+INSERT INTO `khach_hang` VALUES (48, 'Lê huy', '', 'admin8', 'e10adc3949ba59abbe56e057f20f883e', '0382535536', 1, 'admin@gmail.com', 2, '76bc01a7bf6d4d9e8fad', NULL, NULL, NULL);
+INSERT INTO `khach_hang` VALUES (49, 'Công Dương', NULL, 'duongcong1', 'e10adc3949ba59abbe56e057f20f883e', '0365987146', 0, 'fuckduong@gmail.com', 2, '76bc01a7bf6d4d9e8fad', NULL, NULL, NULL);
+INSERT INTO `khach_hang` VALUES (50, 'Đõ Thị Tuyết Mai', NULL, 'Mai', '25f9e794323b453885f5181f1b624d0b', '0325689451', 0, 'mai@gmail.com', 2, '76bc01a7bf6d4d9e8fad', NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for loai_can

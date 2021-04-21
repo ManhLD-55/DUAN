@@ -36,7 +36,24 @@ switch ($act) {
     $ma_tk = $_POST['ma_tk'];
     $email = $_POST['email'];
     $sdt = $_POST['sdt'];
-    updatekh($tentk, $ma_tk, $email, $sdt);
+    $pathimg = '../uploaded/';
+    
+    $cmnd_truoc_file = $_FILES['cmnd_truoc'];
+    $cmnd_truoc_name = uniqid() . $_FILES['cmnd_truoc']['name'];
+    // Chỉ upload file định dạnh ảnh
+    if (in_array($cmnd_truoc_file['type'], ['image/jpeg', 'image/jpg', 'image/png', 'image/gif']) ) {
+      $target_files = $pathimg . basename($cmnd_truoc_name);
+      move_uploaded_file($cmnd_truoc_file['tmp_name'], $target_files);
+    }
+    $cmnd_sau_file = $_FILES['cmnd_sau'];
+    $cmnd_sau_name = uniqid() . $_FILES['cmnd_sau']['name'];
+    // Chỉ upload file định dạnh ảnh
+    if (in_array($cmnd_sau_file['type'], ['image/jpeg', 'image/jpg', 'image/png', 'image/gif']) ) {
+      $target_files = $pathimg . basename($cmnd_sau_name);
+      move_uploaded_file($cmnd_sau_file['tmp_name'], $target_files);
+    }
+
+    updatekh($tentk, $ma_tk, $email, $sdt, $cmnd_truoc_name, $cmnd_sau_name);
     header('location: ?act=thongtintk&ma_tk=' . $ma_tk . '');
     break;
   case 'dangnhap':
@@ -433,17 +450,19 @@ switch ($act) {
     break;
     case 'giahanhopdong';
     try {
-        if ($_POST["ngay_thue"] != "") {
+        if ($_POST["ngay_het_han"] != "") {
             if (isset($_POST["dat1"])) {
                 $ma_tk = $_POST['ma_tk'];
                 $ngay_thue = $_POST["ngay_thue"];
                 $ngay_het_han = $_POST["ngay_het_han"];
-                giahan($ngay_thue,$ngay_het_han, $ma_tk);
+                if ($ngay_thue <= $ngay_het_han) {
+                  giahan($ngay_thue,$ngay_het_han, $ma_tk);
+                }
                 header("location: " . "?act=hop-dong&ma_tk=$ma_tk");
                 break;
             }
         } else {
-            require_once "views/layout.php";
+          header("location: ?act=hop-dong&ma_tk=" . $_SESSION["id"] . "");
         }
     } catch (\Exception $e) {
         dd($e);
@@ -609,7 +628,8 @@ switch ($act) {
         $sodt = $_POST["sodt"];
         $gio_xem = $_POST["gio_xem"];
         $ghi_chu = $_POST["ghi_chu"];
-        datlichid($ma_can, $ma_tk, $ngay_xem, $ngay_dat ,$trang_thai_lich, $ten_nguoi_dat ,$sodt, $gio_xem , $ghi_chu );
+        $ma_dat = getMaxId('dat_lich')['id'] + 1;
+        datlichid($ma_can, $ma_dat, $ma_tk, $ngay_xem, $ngay_dat ,$trang_thai_lich, $ten_nguoi_dat ,$sodt, $gio_xem , $ghi_chu );
         header("location: " . "?ctrl=home&act=lichsu&ma_tk=$ma_tk");
         break;
       }
@@ -659,48 +679,118 @@ switch ($act) {
     }
     break;
     case 'themhopdong1':
-        $quan = getallquan();
-        $quanz = getallquan();
-        $quanzz = getallquan();
-        $loaican = getallloai_can();
-        $loaicanz=getallloai_can();
-
+        $dsch = canhodadang($_SESSION['id'], true);
+        $dskh = getAllKhachHang($_SESSION['id']);
+        $ma_can = $_GET['ma_can'] ?? null;
+        $ma_tk = $_GET['ma_tk'] ?? null;
+        $ho_ten = '';
+        if ($ma_tk) {
+          $ho_ten = khachhang($ma_tk)['ho_ten'] ?? null;
+        }
         $rows = 'views/addhd.php';
         $view = 'views/thongtintk.php';
         require_once 'views/layout.php';
         break;
     case 'themhopdong':
-
-        if (isset($_POST["ten_can_ho"]) && $_POST["ten_can_ho"] != "") {
+        if (isset($_POST["canhoid"])) {
+          try {
             $data = $_POST;
-            dd($data);die;
-            $ten_can_ho = trim(strip_tags($_POST["ten_can_ho"]));
-            $ma_can = $_POST["ma_can"];
-            $loai_can = $_POST['loai_can'];
-            $ma_tk = $_GET['ma_tk'];
-            $vi_tri = $_POST["vi_tri"];
-            $dien_tich = $_POST["dien_tich"];
-            $gia_thue = $_POST["gia_thue"];
+            $can_ho = getcan_hoByid($_POST['canhoid']);
+            $loaican = maloaican($can_ho['ma_loai']);
+            $khachhang = khachhang($can_ho['ma_tk']);
+
+            $ten_can_ho = $can_ho['ten_can_ho'];
+            $ma_can = $can_ho["ma_can"];
+            $loai_can = $loaican['ten_can'];
+            $ma_tk = $can_ho['ma_tk'];
+            $vi_tri = $can_ho["dia_chi"];
+            $dien_tich = $can_ho["dien_tich"];
+            $gia_thue = $can_ho["gia_thue"];
             $chi_phi_khac = $_POST["chi_phi_khac"];
-            $chu_nha = $_POST["chu_nha"];
+            $chu_nha = $khachhang["ho_ten"];
             $nguoi_thue = $_POST["nguoi_thue"];
             $do_dung = $_POST["do_dung"];
             $ngay_thue = $_POST["ngay_thue"];
             $ngay_het_han = $_POST["ngay_het_han"];
-
             settype($ma_can, "int");
             settype($ma_quan, "int");
             settype($gia_thue, "int");
             settype($dien_tich, "int");
             settype($ma_tk, "int");
-            themhopdong($ma_tk, $ma_can, $nguoi_thue, $vi_tri, $ten_can_ho, $dien_tich, $do_dung, $gia_thue, $chi_phi_khac, $chu_nha,$loai_can,$ngay_thue,$ngay_het_han);
-            header("location: ?ctrl=home&act=hopdong&ma_tk=" . $_SESSION["id"] . "");
+            themhopdong($ma_tk, $ma_can, $vi_tri, $dien_tich, $ten_can_ho, $gia_thue, $chi_phi_khac, $do_dung, $nguoi_thue, $chu_nha, $loai_can, $ngay_thue, $ngay_het_han);
+            
+            $can_ho = getcan_hoByid($ma_can);
+            $so_luong = $can_ho['so_luong'] > 0 ? $can_ho['so_luong'] - 1 : 0;
+            updateSoluongCanHo($can_ho['ma_can'], $so_luong);
+          } catch (\Exception $e) {
+            dd($e);
+          }
+          header("location: ?ctrl=home&act=hop-dong&ma_tk=" . $_SESSION["id"] . "");
         }
         else {
             header("location: ?ctrl=home&act=thongtintk");
         }
         break;
+    case 'edithopdong':
+        $hop_dong_id = $_GET['id'];
+        $dsch = canhodadang($_SESSION['id']);
+        $dskh = getAllKhachHang($_SESSION['id']);
+        $hop_dong = getHopDongById($hop_dong_id);
+        $rows = 'views/edithd.php';
+        $view = 'views/thongtintk.php';
+        require_once 'views/layout.php';
+      break;
+    case 'save_edithopdong':
+      if (isset($_POST["canhoid"])) {
+        try {
+          $data = $_POST;
+          $can_ho = getcan_hoByid($_POST['canhoid']);
+          $loaican = maloaican($can_ho['ma_loai']);
+          $khachhang = khachhang($can_ho['ma_tk']);
+          $id = $data['id'];
+          $ten_can_ho = $can_ho['ten_can_ho'];
+          $ma_can = $can_ho["ma_can"];
+          $loai_can = $loaican['ten_can'];
+          $ma_tk = $can_ho['ma_tk'];
+          $vi_tri = $can_ho["dia_chi"];
+          $dien_tich = $can_ho["dien_tich"];
+          $gia_thue = $can_ho["gia_thue"];
+          $chi_phi_khac = $_POST["chi_phi_khac"];
+          $chu_nha = $khachhang["ho_ten"];
+          $nguoi_thue = $_POST["nguoi_thue"];
+          $do_dung = $_POST["do_dung"];
+          $ngay_thue = $_POST["ngay_thue"];
+          $ngay_het_han = $_POST["ngay_het_han"];
+          settype($ma_can, "int");
+          settype($ma_quan, "int");
+          settype($gia_thue, "int");
+          settype($dien_tich, "int");
+          settype($ma_tk, "int");
+          $hop_dong_before_update = getHopDongById($id);
+          updateHopDong($ma_tk, $ma_can, $vi_tri, $dien_tich, $ten_can_ho, $gia_thue, $chi_phi_khac, $do_dung, $nguoi_thue, $chu_nha, $loai_can, $ngay_thue, $ngay_het_han);
+          $hop_dong_after_update = getHopDongById($id);
+          
+          // Nếu thay đổi căn hộ
+          if ($ma_can != $hop_dong_before_update['ma_can']) {
+            // Update lại số lượng căn hộ thay đổi
+            $can_ho = getcan_hoByid($hop_dong_after_update['ma_can']);
+            $so_luong = $can_ho['so_luong'] > 0 ? $can_ho['so_luong'] - 1 : 0;
+            updateSoluongCanHo($can_ho['ma_can'], $so_luong);
 
+            // Update lại số lượng căn hộ cũ 
+            $can_ho = getcan_hoByid($hop_dong_before_update['ma_can']);
+            $so_luong = $can_ho['so_luong'] >= 0 ? $can_ho['so_luong'] + 1 : 0;
+            updateSoluongCanHo($can_ho['ma_can'], $so_luong);
+          }
+        } catch (\Exception $e) {
+          dd($e);
+        }
+        header("location: ?ctrl=home&act=hop-dong&ma_tk=" . $_SESSION["id"] . "");
+      }
+      else {
+          header("location: ?ctrl=home&act=thongtintk");
+      }
+      break;
     //Tìm kiếm ở trang chủ
   case 'timkiemtheogia':
 
@@ -813,11 +903,13 @@ switch ($act) {
   case 'updatedl':
     $ma_dat = $_GET["ma_dat"];
     $trang_thai = 1;
-    updatedl($ma_dat, $trang_thai);
+    $trang_thai_lich = 1;
+    updatedl($ma_dat, $trang_thai, $trang_thai_lich);
     header("location: ?ctrl=home&act=ds-ld&ma_tk=" . $_SESSION['id'] . "");
     break;
     case 'doilich':
         $ma_tk = $_GET["ma_tk"] ?? null;
+        $ma_dat = $_GET['ma_dat'] ?? null;
         $dl = datlich($ma_tk);
         if (isset($_GET['canhoid']) == true) {
             $idcanho = getcan_hoByid($_GET['canhoid']);
@@ -825,14 +917,14 @@ switch ($act) {
         }
         break;
     case 'henlailich':
-
             if ($_POST["ngay_xem"] != "") {
                 if (isset($_POST["dat1"])) {
                     $ma_tk = $_POST['ma_tk'];
+                    $ma_dat = $_POST['ma_dat'];
                     $gio_xem =$_POST['gio_xem'];
                     $ngay_xem = $_POST["ngay_xem"];
-                    $trang_thai_lich = 2;
-                    doilich($gio_xem,$ngay_xem,$trang_thai_lich,$ma_tk);
+                    $trang_thai_lich = 1;
+                    doilich($gio_xem,$ngay_xem,$trang_thai_lich,$ma_dat);
                     header("location: " . "?act=lichsu&ma_tk=$ma_tk");
                     break;
                 }
@@ -928,5 +1020,41 @@ break;
     }
 
     break;
+    case 'thue';
+      $ma_dat = $_GET['ma_dat'];
+      $action = $_GET['action'];
+      $dat_lich = getDatlichByMaDat($ma_dat);
+      $can_ho = getcan_hoByid($dat_lich['ma_can']);
+      
+      $trang_thai = 1;
+      $so_luong = $can_ho['so_luong'] > 0 ? $can_ho['so_luong'] - 1 : 0;
+      $trang_thai_lich = 2;
+
+      if ($action != 'cho-thue') {
+        $so_luong = $can_ho['so_luong'] >= 0 ? $can_ho['so_luong'] + 1 : 0;
+        $trang_thai_lich = 1;
+      }
+      updateSoluongCanHo($can_ho['ma_can'], $so_luong);
+      updatedl($ma_dat,$trang_thai, $trang_thai_lich);
+      header("location: ?ctrl=home&act=ds-ld&ma_tk=" . $_SESSION['id'] . "");
+    break;
+    case 'delete_hop_dong':
+      $id = $_GET['id'];
+      $ma_can = $_GET['ma_can'];
+      $ma_tk = $_SESSION["id"];
+      xoaHopDong($id);
+      $can_ho = getcan_hoByid($ma_can);
+      $so_luong = $can_ho['so_luong'] >= 0 ? $can_ho['so_luong'] + 1 : 0;
+      updateSoluongCanHo($can_ho['ma_can'], $so_luong);
+      header("location: " . "?act=hop-dong&ma_tk=$ma_tk");
+      break;
+    case 'get_can_ho':
+      if (isset($_GET['canhoid']) == true) {
+        $can_ho = getcan_hoByid($_GET['canhoid']);
+        $loaican = maloaican($can_ho['ma_loai']);
+        $khachhang = khachhang($can_ho['ma_tk']);
+        require_once 'views/can_ho-preview.php';
+      }
+      break;
 }
 ?>

@@ -337,7 +337,7 @@
                     <?php
                     } ?>
                     <?php } ?>
-                    <?php if ($row['ghi_chu'] == 'Hết phòng'){ ?>
+                    <?php if ($row['so_luong'] <=0 ){ ?>
                         <strong style="size: 25px;text-align: center;"> Căn hộ này đã cho thuê hết phòng</strong>
                     <?php } ?>
                 </div>

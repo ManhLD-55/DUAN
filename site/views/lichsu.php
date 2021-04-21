@@ -62,8 +62,8 @@
                                         <br>
                                         <br>
                                         <div class="divmota8">
-                                            <span style="display: none;"><?=$can_ho["ma_can"]?></span>
-                                            <input type="button" value="Hẹn lại lịch" class="henlich" data-toggle="modal" data-target="#datlich" data-dismiss="modal">
+                                            <span style="display: none;"><?=$ds["ma_can"]?></span>
+                                            <input ma-dat="<?= $ds['ma_dat'] ?>" type="button" value="Hẹn lại lịch" class="henlich" data-toggle="modal" data-target="#datlich" data-dismiss="modal">
 
                                         </div>
                                    <?php }
@@ -86,8 +86,9 @@
                         var btnClick = $(this);
 
                         var id = btnClick.prev().html();
+                        var ma_dat = $(this).attr('ma-dat');
                         //   alert(id);
-                        $.get("?ctrl=home&act=doilich", {'canhoid': id},
+                        $.get("?ctrl=home&act=doilich", {'canhoid': id, 'ma_dat': ma_dat},
                             function (data) {
                                 $('#datlich').html(data);
                             });

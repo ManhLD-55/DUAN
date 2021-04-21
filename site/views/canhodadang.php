@@ -70,7 +70,7 @@
                             <span class="yesyes" style="background-color: green; padding: 5px; color: white; width: 100%; border-radius: 10px;">Đã thanh toán</span>
                             <?php
                         }?></p>
-                        <p style="margin-top: 20px;"><?php if ($c["trang_thai"]==1) {
+                        <p style="margin-top: 20px;"><?php if ($c["so_luong"] <= 0) {
                                 ?>
                                 <a style="background-color: orangered; padding: 5px; color: white; width: 100%; border-radius: 10px;" >Hết phòng</a>
                                 <?php

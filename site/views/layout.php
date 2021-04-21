@@ -351,6 +351,7 @@
             </div>
             <div class="textquan">
                 <div class="quan1 l1">
+                <?php if(isset($quan)): ?>
                     <?php foreach ($quan as $q) {
                         $stt += 1; ?>
                         <p><a href="?ctrl=home&act=danhsach&ma_quan=<?= $q["ma_quan"]?>"><?= $q["ten_quan"]?></a></p>
@@ -363,7 +364,7 @@
             <?php
                         }
                     } ?>
-
+                <?php endif; ?>
             <!-- </div>
                 <div class="quan1 l2"> -->
 

@@ -27,7 +27,7 @@
             else{
                 ?>
                 
-                <form action="?act=thaydoitt" method="post" class="form-tk">
+                <form action="?act=thaydoitt" method="post" class="form-tk" enctype="multipart/form-data">
                    <h4 style="margin-top: 50px; margin-bottom: 20px; font-weight: bold;font-size: 16pt;">Thông tin cá nhân</h4>
                    <div class="tt-right-row">
                        <label>Họ và tên</label>
@@ -40,10 +40,28 @@
                    </div>
                    <div class="tt-right-row">
                        <label>Số điện thoại</label>
-                       <input type="text" name="sdt" id=""  value="0<?=$kh['sdt']?>">
+                       <input type="text" name="sdt" id=""  value="<?=$kh['sdt']?>">
                    </div>
                     <div class="tt-right-row">
                         <label>Số dư tài khoản </label> <?= number_format($kh['currency'], 0, ' ', '.') ?> VNĐ
+                    </div>
+                    <div class="tt-right-row" style="margin-bottom:30px">
+                        <label>Ảnh CMND</label>
+                        <div style="width:50%;float:left">
+                            <p>Mặt trước</p>
+                            <?php if ($kh['cmnd_truoc'] != ''): ?>
+                                <img src="../uploaded/<?= $kh['cmnd_truoc'] ?>" width="300" height="200">
+                            <?php endif; ?>
+                            <input type="file" name="cmnd_truoc">   
+                        </div>
+                        <div>
+                            <p>Mặt sau</p>
+                            <?php if ($kh['cmnd_sau'] != ''): ?>
+                                <img src="../uploaded/<?= $kh['cmnd_sau'] ?>" width="300" height="200">
+                            <?php endif; ?>
+                            <input type="file" name="cmnd_sau">   
+                        </div>
+
                     </div>
                    <button class="btn-tk">Lưu</button>
                 </form>

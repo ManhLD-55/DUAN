@@ -13,6 +13,7 @@
                     <th scope="col">Ngày đặt</th>
                     <th scope="col">Ghi chú</th>
                     <th scope="col">Thông báo lịch</th>
+                    <th scope="col">Tình trạng</th>
                     <th scope="col">Duyệt</th>
                     <th scope="col">Xóa</th>
                 </tr>
@@ -52,16 +53,25 @@
                         </td>
                         <td>
                             <?php
-                            if ($ds['trang_thai_lich'] == 1) {
+                            if ($ds['trang_thai_lich'] != 0) {
                                 echo "<p>Khách chờ xem nhà</p>";
                             } else {
                                 echo "<p>Khách đã hủy lịch xem</p> ";
                             }
                             ?>
                         </td>
+                        <td width="100">
+                            <?php if($ds['trang_thai'] == 1 && date("Y-m-d") <= date_format(date_create($ds['ngay_xem']), "Y-m-d")): ?>
+                                <a href="?act=themhopdong1&ma_can=<?= $ds["ma_can"] ?>&ma_tk=<?=$ds['ma_tk']?>">Cho thuê</a>
+                                <!-- <a href="?act=thue&action=cho-thue&ma_dat=<?= $ds["ma_dat"] ?>">Cho thuê</a> -->
+                            <?php elseif($ds['trang_thai_lich'] == 2): ?>
+                                <p>Đã cho thuê</p>
+                                <!-- <a href="?act=thue&action=huy-thue&ma_dat=<?= $ds["ma_dat"] ?>">Hủy thuê</a> -->
+                            <?php endif; ?>
+                        </td>
                         <td>
                             <?php if ($ds["ngay_xem"] > date("Y-m-d")) : ?>
-                                <?php if ($ds['trang_thai'] == 1) : ?>
+                                <?php if ($ds['trang_thai'] != 0) : ?>
                                     <i style="margin-left: 10px; color:green" class="fas fa-check"></i>
                                 <?php elseif ($ds['trang_thai_lich'] == 1) : ?>
                                     <a href="?act=updatedl&ma_dat=<?= $ds["ma_dat"] ?>" style="margin-left: 10px"><i class="fas fa-check-square"></i></a>
