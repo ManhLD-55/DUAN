@@ -339,53 +339,7 @@
             </div>
         </div>
     <?php } ?>
-    <footer class="footer">
-        <div class="box4 b1">
-            <img src="../uploaded/logo.png" alt="">
-            <p>Golden công ty dịch vụ BĐS hiện đại, cung cấp nguồn bất động sản an toàn, 100% được thẩm định pháp lý cho người dùng có nhu cầu mua, bán và thuê BĐS.</p>
-            <p>Tầng 5, Tòa nhà Flemington, 35/45 Trần Thái Tông - Dịch Vọng - Cầu Giấy - Hà Nội</p>
-        </div>
-        <div class="box4 b2">
-            <div class="tieude4">
-                <h4>Danh sách các quận</h4>
-            </div>
-            <div class="textquan">
-                <div class="quan1 l1">
-                <?php if(isset($quan)): ?>
-                    <?php foreach ($quan as $q) {
-                        $stt += 1; ?>
-                        <p><a href="?ctrl=home&act=danhsach&ma_quan=<?= $q["ma_quan"]?>"><?= $q["ten_quan"]?></a></p>
-
-                        <?php
-                        if ($stt == 10) {
-                        ?>
-                </div>
-                <div class="quan1 l2">
-            <?php
-                        }
-                    } ?>
-                <?php endif; ?>
-            <!-- </div>
-                <div class="quan1 l2"> -->
-
-                </div>
-            </div>
-        </div>
-
-    </footer>
-    <div class="modal fade" id="myModal" role="dialog">
-
-    </div>
-    <!-- end căn ho ct -->
-
-    <div class="modal fade dl" id="datlich" role="dialog">
-
-    </div>
-    <div class="divcuoi">
-        <span> 2020 © Bản quyền GoldenHome. Đã đăng ký Bản quyền.</span>
-    </div>
-
-
+    <?php include('footer.php') ?>
 
 </body>
 

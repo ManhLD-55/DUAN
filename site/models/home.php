@@ -719,4 +719,10 @@ function getMaxId($table_name) {
     $sql = "SELECT MAX(id) as id FROM $table_name";
     return queryOne($sql);
 }
+
+function addSubscribe($email)
+{
+    $sql = "INSERT INTO subscribe (email, created, updated) VALUES ('$email', now(), now())";
+    execute($sql);
+}
 ?> 

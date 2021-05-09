@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
     <link rel="stylesheet" href="./views/css/about.css">
+    <link rel="stylesheet" href="./views/css/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"> </script>
 </head>
 
 <body>
@@ -297,48 +300,7 @@
             </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="box4 b1">
-            <img src="../uploaded/logo.png" alt="">
-            <p>Golden công ty dịch vụ BĐS hiện đại, cung cấp nguồn bất động sản an toàn, 100% được thẩm định pháp lý cho người dùng có nhu cầu mua, bán và thuê BĐS.</p>
-            <p>Tầng 4, Tòa nhà Flemington, 182 Lê Đại Hành, Phường 15, Quận 11, TP. Hồ Chí Minh</p>
-        </div>
-        <div class="box4 b2">
-            <div class="tieude4">
-                <h4>Danh sách các quận</h4>
-            </div>
-            <div class="textquan">
-                <div class="quan1 l1">
-                    <?php foreach ($quan as $q) {
-                        $stt += 1; ?>
-                        <p><a href="?ctrl=home&act=danhsach&ma_quan=<?= $q["ma_quan"]?>"><?= $q["ten_quan"]?></a></p>
-
-                        <?php
-                        if ($stt == 10) {
-                        ?>
-                </div>
-                <div class="quan1 l2">
-            <?php
-                        }
-                    } ?>
-
-            <!-- </div>
-                <div class="quan1 l2"> -->
-
-                </div>
-            </div>
-        </div>
-        <div class="box4">
-            <h4>Đăng ký để biết thêm thông tin từ Golden</h4> <br>
-            <input type="text" placeholder="Địa chỉ email" style="font-size: 11pt;"><input class="ip2" type="submit" value="Đăng ký">
-        </div>
-    </div>
-    <!-- Footer Golden Home -->
-
-    <div class="divcuoi">
-        <span> 2020 © Bản quyền GoldenHome. Đã đăng ký Bản quyền.</span>
-    </div>
-
+    <?php include('footer.php') ?>
 </body>
 
 </html>

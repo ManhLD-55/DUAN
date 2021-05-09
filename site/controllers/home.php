@@ -1082,5 +1082,16 @@ break;
         require_once 'views/can_ho-preview.php';
       }
       break;
+    case 'subscribe';
+        $email = $_POST['email'] ?? null;
+        if ($email) {
+          addSubscribe($email);
+        }
+      $res = [
+        'success' => true,
+      ];
+
+      echo json_encode($res);
+      break;
 }
 ?>
