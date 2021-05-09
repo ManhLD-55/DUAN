@@ -36,21 +36,28 @@ switch ($act) {
     $ma_tk = $_POST['ma_tk'];
     $email = $_POST['email'];
     $sdt = $_POST['sdt'];
-    $pathimg = '../uploaded/';
+    $pathimg = '../uploaded/users/';
     
     $cmnd_truoc_file = $_FILES['cmnd_truoc'];
-    $cmnd_truoc_name = uniqid() . $_FILES['cmnd_truoc']['name'];
-    // Chỉ upload file định dạnh ảnh
-    if (in_array($cmnd_truoc_file['type'], ['image/jpeg', 'image/jpg', 'image/png', 'image/gif']) ) {
-      $target_files = $pathimg . basename($cmnd_truoc_name);
-      move_uploaded_file($cmnd_truoc_file['tmp_name'], $target_files);
+    $cmnd_truoc_name = null;
+    if ($cmnd_truoc_file['size'] > 0) {
+      $cmnd_truoc_name = uniqid() . $_FILES['cmnd_truoc']['name'];
+      // Chỉ upload file định dạnh ảnh
+      if (in_array($cmnd_truoc_file['type'], ['image/jpeg', 'image/jpg', 'image/png', 'image/gif']) ) {
+        $target_files = $pathimg . basename($cmnd_truoc_name);
+        move_uploaded_file($cmnd_truoc_file['tmp_name'], $target_files);
+      }
     }
+
     $cmnd_sau_file = $_FILES['cmnd_sau'];
-    $cmnd_sau_name = uniqid() . $_FILES['cmnd_sau']['name'];
-    // Chỉ upload file định dạnh ảnh
-    if (in_array($cmnd_sau_file['type'], ['image/jpeg', 'image/jpg', 'image/png', 'image/gif']) ) {
-      $target_files = $pathimg . basename($cmnd_sau_name);
-      move_uploaded_file($cmnd_sau_file['tmp_name'], $target_files);
+    $cmnd_sau_name = null;
+    if ($cmnd_sau_file['size'] > 0) {
+      $cmnd_sau_name = uniqid() . $_FILES['cmnd_sau']['name'];
+      // Chỉ upload file định dạnh ảnh
+      if (in_array($cmnd_sau_file['type'], ['image/jpeg', 'image/jpg', 'image/png', 'image/gif']) ) {
+        $target_files = $pathimg . basename($cmnd_sau_name);
+        move_uploaded_file($cmnd_sau_file['tmp_name'], $target_files);
+      }
     }
 
     updatekh($tentk, $ma_tk, $email, $sdt, $cmnd_truoc_name, $cmnd_sau_name);
@@ -126,6 +133,21 @@ switch ($act) {
       //   echo 'Mail không gửi được. Lỗi: ', $mail->ErrorInfo;
       // }
       //header('location: ?act=gui_lmail&ma_tk='.$idUser.'');
+        $tentk = $user;
+        $pass = md5($pass);
+        $checktk = checktk($tentk, $pass);
+        if (is_array($checktk)) {
+        $_SESSION['user'] = $checktk['ten_tk'];
+        $_SESSION['name'] = $checktk['ho_ten'];
+        $_SESSION['email'] = $checktk['email'];
+        $_SESSION['id'] = $checktk['ma_tk'];
+        $_SESSION['shinh'] = $checktk['hinh'];
+        $_SESSION['mat_khau'] = $checktk['mat_khau'];
+        $_SESSION['vai_tro'] = $checktk['vai_tro'];
+        $_SESSION['sdt'] = $checktk['sdt'];
+        $_SESSION['gioitinh'] = $checktk['gioitinh'];
+          header('location: index.php');
+      }
     }
     require_once 'views/login.php';
     break;
@@ -510,6 +532,7 @@ switch ($act) {
     break;
   case 'lichsu':
     $ma_tk = $_GET["ma_tk"];
+    $kh = khachhang($_SESSION['id']);
     $lichsu = lichsu($ma_tk);
     $rows = 'views/lichsu.php';
     $view = 'views/thongtintk.php';
@@ -518,6 +541,7 @@ switch ($act) {
   case 'thongbao':
     $ma_tk = $_GET["ma_tk"];
     $showtb = getthongbao($ma_tk);
+    $kh = khachhang($_SESSION['id']);
     $rows = 'views/thongbao.php';
     $view = 'views/thongtintk.php';
     require_once 'views/layout.php';
@@ -535,6 +559,7 @@ switch ($act) {
 //        break;
 
   case 'doimk':
+    $kh = khachhang($_SESSION['id']);
     $rows = 'views/doimk.php';
     $view = 'views/thongtintk.php';
     require_once 'views/layout.php';
@@ -923,8 +948,9 @@ switch ($act) {
                     $ma_dat = $_POST['ma_dat'];
                     $gio_xem =$_POST['gio_xem'];
                     $ngay_xem = $_POST["ngay_xem"];
+                    $ghi_chu = $_POST["ghi_chu"];
                     $trang_thai_lich = 1;
-                    doilich($gio_xem,$ngay_xem,$trang_thai_lich,$ma_dat);
+                    doilich($gio_xem,$ngay_xem,$trang_thai_lich,$ma_dat, $ghi_chu);
                     header("location: " . "?act=lichsu&ma_tk=$ma_tk");
                     break;
                 }

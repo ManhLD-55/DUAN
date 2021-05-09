@@ -50,14 +50,14 @@
                         <div style="width:50%;float:left">
                             <p>Mặt trước</p>
                             <?php if ($kh['cmnd_truoc'] != ''): ?>
-                                <img src="../uploaded/<?= $kh['cmnd_truoc'] ?>" width="300" height="200">
+                                <img src="../uploaded/users/<?= $kh['cmnd_truoc'] ?>" width="300" height="200">
                             <?php endif; ?>
                             <input type="file" name="cmnd_truoc">   
                         </div>
                         <div>
                             <p>Mặt sau</p>
                             <?php if ($kh['cmnd_sau'] != ''): ?>
-                                <img src="../uploaded/<?= $kh['cmnd_sau'] ?>" width="300" height="200">
+                                <img src="../uploaded/users/<?= $kh['cmnd_sau'] ?>" width="300" height="200">
                             <?php endif; ?>
                             <input type="file" name="cmnd_sau">   
                         </div>

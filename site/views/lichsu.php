@@ -35,7 +35,11 @@
                                 <p>Địa chỉ nhà: <?php echo $canho["dia_chi"]?></p>
                                 <p>Ghi chú: <?php echo $ds["ghi_chu"]?></p>
                               </td>
-                                <td><?=date_format(date_create($ds['ngay_xem']), "d/m/yy")?></td>
+                                <td>
+                                    <?= date_format(date_create($ds['ngay_xem']), "d/m/yy")?>
+                                    <?= date_format(date_create($ds['gio_xem']), "H:m")?>
+
+                                </td>
                                 <td><?=date_format(date_create($ds['ngay_dat']), "d/m/yy")?></td>
                                 <td><?php if (date("Y-m-d") > date_format(date_create($ds['ngay_xem']), "Y-m-d")) {
                                     echo "Đã hết hạn";
@@ -57,20 +61,17 @@
                                 ?></p>    
                             </td>
                                 <td>
-                                    <?php if($ds['trang_thai_lich']==1) { ?>
+                                    <?php if($ds['trang_thai_lich']==1): ?>
                                          <a href = "javascript:Delete('?act=huydatlich&ma_dat=<?=$ds['ma_dat']?>')" style = "color: white; background-color: orangered; padding: 2px 5px; border-radius: 10px;" > Hủy lịch </a >
                                         <br>
                                         <br>
                                         <div class="divmota8">
                                             <span style="display: none;"><?=$ds["ma_can"]?></span>
                                             <input ma-dat="<?= $ds['ma_dat'] ?>" type="button" value="Hẹn lại lịch" class="henlich" data-toggle="modal" data-target="#datlich" data-dismiss="modal">
-
                                         </div>
-                                   <?php }
-                                    else {
-                                        echo "  Bạn đã hủy lịch ";
-                                    }
-                                     ?>
+                                   <?php else : ?>
+                                        <span style="color:orangered" class="text-danger">Bạn đã hủy lịch</span>    
+                                   <?php endif; ?>
 
                                 </td>
                                 

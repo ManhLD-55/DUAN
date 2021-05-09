@@ -286,10 +286,10 @@
                             </div>
                                
                             <div class="fiel" style="margin-top: 0px;font-size: 10pt;">
-                                <input class="ipdl4" id="ten_nguoi_dat" name="ten_nguoi_dat" type="text" placeholder="<?=$kh['ho_ten'] ?>" value="<?=$kh['ho_ten'] ?>">
+                                <input class="ipdl4" id="ten_nguoi_dat" name="ten_nguoi_dat" type="text" placeholder="Họ tên" value="<?=$kh['ho_ten'] ?>">
                                 <br>
                                 <br>
-                                <input class="ipdl4" id="sodt" type="text" name="sodt" placeholder="<?=$kh['sdt'] ?>" value="<?=$kh['sdt'] ?>">
+                                <input class="ipdl4" id="sodt" type="text" name="sodt" placeholder="Số điện thoại" value="<?=$kh['sdt'] ?>">
                                 <br>
                                 <br>
                                 <input type="date" min="<?= date("Y-m-d") ?>" name="ngay_xem" id="" style="font-size: 10pt;width: 50%;float: left;">

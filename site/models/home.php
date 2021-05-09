@@ -496,7 +496,15 @@ function kichhoattk($ma_tk){
 }
 // update tk
 function  updatekh($tentk, $ma_tk, $email, $sdt, $cmnd_truoc, $cmnd_sau){
-    $sql = "UPDATE khach_hang SET ho_ten='$tentk', email='$email', sdt='$sdt', cmnd_truoc='$cmnd_truoc', cmnd_sau='$cmnd_sau' WHERE ma_tk='$ma_tk'";
+    $sql = "UPDATE khach_hang SET ho_ten='$tentk', email='$email', sdt='$sdt'";
+    if ($cmnd_truoc) {
+        $sql .= ", cmnd_truoc='$cmnd_truoc'";
+    }
+    if ($cmnd_sau) {
+        $sql .= ", cmnd_sau='$cmnd_sau'";
+    }
+    $sql .= " WHERE ma_tk='$ma_tk'";
+
     execute($sql);
 }
 function Luuthongtintk($ho_ten,$user, $pass, $email, $random){
@@ -548,7 +556,7 @@ function DeleteCanho_dd($ma_can){
 
 //show lịch sử đặt căn hộ
 function lichsu($id){
-    $sql="SELECT * FROM dat_lich where ma_tk='$id' order by ngay_xem desc";
+    $sql="SELECT * FROM dat_lich where ma_tk='$id' order by id desc";
     return query($sql);
 }
 function canho($id){
@@ -646,8 +654,12 @@ function xoadatlich($id){
      execute($sql)
      ;
  }
- function doilich($gio_xem,$ngay_xem,$trang_thai_lich,$ma_dat){
-     $sql = "UPDATE dat_lich SET gio_xem ='$gio_xem',ngay_xem ='$ngay_xem',trang_thai_lich='$trang_thai_lich'  WHERE ma_dat='$ma_dat'";
+ function doilich($gio_xem,$ngay_xem,$trang_thai_lich,$ma_dat, $ghi_chu) {
+     $sql = "UPDATE dat_lich SET gio_xem ='$gio_xem',ngay_xem ='$ngay_xem',trang_thai_lich='$trang_thai_lich'";
+     if ($ghi_chu) {
+        $sql .= ", ghi_chu = '$ghi_chu'";
+     }
+     $sql .= " WHERE ma_dat='$ma_dat'";
      execute($sql)
      ;
  }

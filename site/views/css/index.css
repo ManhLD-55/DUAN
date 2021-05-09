@@ -1231,7 +1231,7 @@ a {
 
 .divdl .ipdl4 {
     margin-bottom: 60px;
-    width: 45%;
+    width: 75%;
     margin-left: 20px;
 }
 
@@ -1332,6 +1332,15 @@ a {
     font-weight: bold;
 }
 
-input#ngay_xem {
-    width: 100%;
+i.glyphicon.glyphicon-remove {
+    cursor: pointer;
+}
+
+.btn-dl {
+    width: 200px;
+    outline: none;
+    border: 0;
+    padding: 5px;
+    border-radius: 2px;
+    margin-bottom: 15px;
 }

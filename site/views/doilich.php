@@ -15,9 +15,11 @@
             <span style="margin-left: 20px;">Giờ xem :</span>
             <input class="ipdl4" id="gio_xem" name="gio_xem" min="<?=date("H-i-s")?>" type="time" placeholder="Giờ xem">
             <br>
+            <textarea class="ipdl4" id="ghi_chu" name="ghi_chu" rows="4" cols="50" placeholder="Ghi Chú" style="width: 90%"></textarea>  
             <input type="hidden" name="ma_tk" value="<?=$_SESSION["id"]?>">
-            <input type="submit" class="guitt" id="dat1" name="dat1" style="background-color: orangered; font-size: 12pt; color: white; " value="Gửi thông tin">
-
+            <div style="text-align:center">
+                <button type="submit" class="btn-dl" id="dat1" name="dat1" style="background-color: orangered; font-size: 12pt; color: white; " value="">Gửi thông tin</button>
+            </div>
         </form>
         <?php
         if (isset($message)&&($message!="")) {
