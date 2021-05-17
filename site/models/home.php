@@ -327,11 +327,11 @@ function Demcanhotheoquanvaloaican($loaican,$ma_quan){
      return query($sql);
  }
  // gia han hop dong
- function giahan($ngay_thue,$ngay_het_han,$ma_tk){
+ function giahan($ngay_thue,$ngay_het_han,$ma_tk,$id){
      if ($ngay_thue) {
-        $sql="UPDATE hop_dong SET ngay_thue='$ngay_thue',ngay_het_han='$ngay_het_han' WHERE ma_tk='$ma_tk'";
+        $sql="UPDATE hop_dong SET ngay_thue='$ngay_thue',ngay_het_han='$ngay_het_han' WHERE ma_tk='$ma_tk' AND id = '$id'";
      } else {
-        $sql="UPDATE hop_dong SET ngay_het_han='$ngay_het_han' WHERE ma_tk='$ma_tk'";
+        $sql="UPDATE hop_dong SET ngay_het_han='$ngay_het_han' WHERE ma_tk='$ma_tk' AND id = '$id'";
      }
      execute($sql);
  }

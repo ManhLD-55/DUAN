@@ -463,6 +463,7 @@ switch ($act) {
     require_once 'views/layout.php';
     break;
     case 'giahan':
+        $id = $_GET['hd_id'] ?? null;
         $ma_tk = $_GET["ma_tk"] ?? null;
         $hd = hopdong($ma_tk);
       if (isset($_GET['canhoid']) == true) {
@@ -474,11 +475,12 @@ switch ($act) {
     try {
         if ($_POST["ngay_het_han"] != "") {
             if (isset($_POST["dat1"])) {
+                $id = $_POST['id'];
                 $ma_tk = $_POST['ma_tk'];
                 $ngay_thue = $_POST["ngay_thue"];
                 $ngay_het_han = $_POST["ngay_het_han"];
                 if ($ngay_thue <= $ngay_het_han) {
-                  giahan($ngay_thue,$ngay_het_han, $ma_tk);
+                  giahan($ngay_thue,$ngay_het_han, $ma_tk, $id);
                 }
                 header("location: " . "?act=hop-dong&ma_tk=$ma_tk");
                 break;

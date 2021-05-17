@@ -8,6 +8,7 @@
         ?>
         <form action="?ctrl=home&act=giahanhopdong"  method="post" name="myfor"  onsubmit="return validatefor()">
             <input type="hidden" name="ma_can" value="<?=$idcanho["ma_can"]?>">
+            <input type="hidden" name="id" value="<?= $id ?>">
             <span style="margin-left: 20px;">Ngày thuê</span>
             <input  class="ipdl4"  type="date" min="<?=date("Y-m-d")?>" name="ngay_thue" >
             <br>

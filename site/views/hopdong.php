@@ -50,7 +50,7 @@
                     <td>
                         <div class="divmota3">
                             <span style="display: none;"><?=$can_ho["ma_can"]?></span>
-                            <input type="button" value="Gia hạn" class="giahan" data-toggle="modal" data-target="#datlich" data-dismiss="modal">
+                            <input type="button" data-id="<?= $c['id'] ?>" value="Gia hạn" class="giahan" data-toggle="modal" data-target="#datlich" data-dismiss="modal">
                         </div>
                     </td>
 
@@ -69,8 +69,9 @@
         var btnClick = $(this);
 
         var id = btnClick.prev().html();
+        var hd_id = $(this).data('id');
         //   alert(id);
-        $.get("?ctrl=home&act=giahan", {'canhoid': id},
+        $.get("?ctrl=home&act=giahan", {'canhoid': id, 'hd_id' : hd_id},
             function (data) {
                 $('#datlich').html(data);
             });
