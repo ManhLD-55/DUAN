@@ -340,7 +340,13 @@
         </div>
     <?php } ?>
     <?php include('footer.php') ?>
+    <div class="modal fade" id="myModal" role="dialog">
 
+    </div>
+    <!-- end căn ho ct -->
+
+    <div class="modal fade dl" id="datlich" role="dialog">
+    </div>
 </body>
 
 </html>
